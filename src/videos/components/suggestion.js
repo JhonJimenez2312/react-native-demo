@@ -11,16 +11,18 @@ function Suggestion(props){
     <View style={styles.container}>
       <View style={styles.left}>
         <Image style={styles.cover}
-          source={require('../../../assets/logo.png')}
+          source={{
+           uri:props.medium_cover_image
+          }}
         />
         <View style={styles.genre}>
-          <Text style={styles.genreText}>Acción</Text>
+          <Text style={styles.genreText}>{props.genres[0]}</Text>
         </View>
       </View>
       <View style={styles.right}>
-        <Text style={styles.title}>titulo</Text>
-        <Text style={styles.year}>2007</Text>
-        <Text style={styles.rating}>4 estrellas</Text>
+        <Text style={styles.title}>{props.title}</Text>
+        <Text style={styles.year}>{props.year}</Text>
+        <Text style={styles.rating}>{props.rating} Estrellas</Text>
       </View>
     </View>
 
@@ -29,14 +31,12 @@ function Suggestion(props){
 const styles = StyleSheet.create({
   container:{
     flexDirection: 'row',
-    margin:8,
+
   },
   cover:{
-    height:80,
-    width:80,
+    height:150,
+    width:100,
     resizeMode:'contain',
-    marginTop:38,
-    margin:8,
   },
   left:{
 
